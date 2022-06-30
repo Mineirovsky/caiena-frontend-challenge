@@ -2,7 +2,7 @@
 import { ExternalLinkIcon } from 'vue-tabler-icons'
 import { PropType } from 'vue'
 import { GithubUserSearchItem } from '../../repositories/searchGithubUser'
-import Button from '../Button.vue'
+import Button from '../Button'
 
 defineProps({
   user: { type: Object as PropType<GithubUserSearchItem>, required: true }

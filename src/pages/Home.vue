@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { SearchIcon } from 'vue-tabler-icons'
-import Button from '../components/Button.vue'
+import Button from '../components/Button'
 </script>
 
 <template>

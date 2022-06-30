@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { SearchIcon } from 'vue-tabler-icons'
 
 import Input from '../Input'
-import Button from '../Button.vue'
+import Button from '../Button'
 
 const emit = defineEmits(['submit'])
 const query = ref('')
