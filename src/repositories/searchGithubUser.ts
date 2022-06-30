@@ -37,7 +37,7 @@ export function makeSearchGithubUser (getContent: typeof fetch) {
     const optionParams = options
       ? Object.entries(options)
         .map(([key, value]) => `&${key}=${value}`)
-        .join()
+        .join('')
       : ''
 
     const response = await getContent(`https://api.github.com/search/users?q=${queryURI}${optionParams}`)
