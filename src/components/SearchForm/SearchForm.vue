@@ -21,6 +21,7 @@ function handleSubmit () {
     <Input v-model="query" class="rounded-r-none peer w-full" />
     <Button type="submit" @click="handleSubmit" class="rounded-l-none peer-focus:shadow duration-200">
       <SearchIcon />
+      <span class="sr-only">Buscar</span>
     </Button>
   </form>
 </template>
