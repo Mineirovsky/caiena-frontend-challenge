@@ -24,10 +24,23 @@ export interface GithubUserSearchItem {
 
 export type GithubUserSearchResponse = PaginatedResponse<GithubUserSearchItem>
 
+export interface SearchGithubUserOptions {
+  sort?: 'followers' | 'repositories' | 'joined'
+  order?: 'desc' | 'asc'
+  per_page?: number
+  page?: number
+}
+
 export function makeSearchGithubUser (getContent: typeof fetch) {
-  return async function searchGithubUser (query: string): Promise<GithubUserSearchResponse> {
+  return async function searchGithubUser (query: string, options?: SearchGithubUserOptions): Promise<GithubUserSearchResponse> {
     const queryURI = encodeURIComponent(query)
-    const response = await getContent(`https://api.github.com/search/users?q=${queryURI}`)
+    const optionParams = options
+      ? Object.entries(options)
+        .map(([key, value]) => `${key}=${value}`)
+        .join('&')
+      : ''
+
+    const response = await getContent(`https://api.github.com/search/users?q=${queryURI}${optionParams}`)
     return response.json()
   }
 }
