@@ -19,7 +19,12 @@ function handleSubmit () {
     class="flex flex-row items-stretch"
   >
     <Input v-model="query" class="rounded-r-none peer w-full" />
-    <Button type="submit" @click="handleSubmit" class="rounded-l-none peer-focus:shadow duration-200">
+    <Button
+      class="rounded-l-none peer-focus:shadow duration-200"
+      color="primary"
+      type="submit"
+      @click="handleSubmit"
+    >
       <SearchIcon />
       <span class="sr-only">Buscar</span>
     </Button>
