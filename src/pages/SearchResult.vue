@@ -49,11 +49,20 @@ onMounted(() => updateResults())
 <template>
   <main class="p-2">
     <h2 class="text-xl">Resultados para "{{ $route.query.q }}"</h2>
+    <Pagination
+      v-model="currentPage"
+      class="my-2"
+      :page-count="pageCount"
+    />
     <ul v-if="result !== null" class="flex flex-col items-center">
       <li v-for="item in result.items" :key="item.id" class="my-2 w-1/2">
         <SearchResultItem :user="item" />
       </li>
     </ul>
-    <Pagination v-model="currentPage" :page-count="pageCount" />
+    <Pagination
+      v-model="currentPage"
+      class="my-2"
+      :page-count="pageCount"
+    />
   </main>
 </template>
