@@ -31,8 +31,15 @@ const pageCount = computed(
   }
 )
 
+watch(() => route.query.q, () => {
+  if (currentPage.value > 1) {
+    currentPage.value = 1
+    return
+  }
+  updateResults()
+})
 watch(
-  [() => route.query.q, perPage, currentPage],
+  [perPage, currentPage],
   () => updateResults()
 )
 
