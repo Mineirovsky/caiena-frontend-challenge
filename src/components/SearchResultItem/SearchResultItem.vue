@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ExternalLinkIcon } from 'vue-tabler-icons'
 import { PropType } from 'vue'
 import { GithubUserSearchItem } from '../../repositories/searchGithubUser'
 import Button from '../Button.vue'
@@ -22,7 +23,13 @@ defineEmits(['readMore'])
           {{ user.login }}
         </a>
       </h3>
-      <Button size="sm" name="readMore" @click="$emit('readMore', user)">Ver mais</Button>
+      <Button size="xs" name="readMore" @click="$emit('readMore', user)" class="mr-2">Ver mais</Button>
+      <a :href="user.html_url" target="_blank">
+        <Button color="primary" size="xs" name="readMore" @click="$emit('readMore', user)" class="align-middle">
+          Perfil no Github
+          <ExternalLinkIcon class="ml-1 translate-y-[-1px]" size="14" />
+        </Button>
+      </a>
     </div>
   </article>
 </template>
