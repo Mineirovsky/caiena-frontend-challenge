@@ -22,7 +22,7 @@ defineEmits(['readMore'])
           {{ user.login }}
         </a>
       </h3>
-      <Button name="readMore" @click="$emit('readMore', user)">Ver mais</Button>
+      <Button size="sm" name="readMore" @click="$emit('readMore', user)">Ver mais</Button>
     </div>
   </article>
 </template>
