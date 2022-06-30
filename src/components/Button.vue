@@ -6,6 +6,7 @@ export type ButtonColor = 'simple' | 'primary' | 'success' | 'error'
 
 defineProps({
   color: { type: String as PropType<ButtonColor>, default: 'simple' },
+  href: { type: String, default: null },
   size: { type: String as PropType<ButtonSize>, default: 'md' }
 })
 
@@ -26,9 +27,13 @@ const sizes: Record<ButtonSize, string> = {
 </script>
 
 <template>
-  <button :class="`rounded ${colors[color]} ${sizes[size]}`">
-    <div class="flex items-center">
+  <component
+    :class="`inline-block rounded ${colors[color]} ${sizes[size]}`"
+    :is="href ? 'a' : 'button'"
+    :href="href"
+  >
+    <div class="flex items-center h-full">
       <slot />
     </div>
-  </button>
+  </component>
 </template>
