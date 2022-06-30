@@ -17,16 +17,18 @@ const colors: Record<ButtonColor, string> = {
 }
 
 const sizes: Record<ButtonSize, string> = {
-  xs: 'text-xs px-2 py-1',
-  sm: 'text-sm px-3 py-2',
-  md: 'px-4 py-2',
-  lg: 'text-lg px-4 py-2',
-  xl: 'text-xl px-6 py-3'
+  xs: 'text-xs px-2 h-6',
+  sm: 'text-sm px-3 h-9',
+  md: 'px-4 h-10',
+  lg: 'text-lg px-4 h-11',
+  xl: 'text-xl px-6 h-14'
 }
 </script>
 
 <template>
   <button :class="`rounded ${colors[color]} ${sizes[size]}`">
-    <slot />
+    <div class="flex items-center">
+      <slot />
+    </div>
   </button>
 </template>
