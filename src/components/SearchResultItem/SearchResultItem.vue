@@ -24,12 +24,15 @@ defineEmits(['readMore'])
         </a>
       </h3>
       <Button size="xs" name="readMore" @click="$emit('readMore', user)" class="mr-2">Ver mais</Button>
-      <a :href="user.html_url" target="_blank">
-        <Button color="primary" size="xs" name="readMore" @click="$emit('readMore', user)" class="align-middle">
-          Perfil no Github
-          <ExternalLinkIcon class="ml-1 translate-y-[-1px]" size="14" />
-        </Button>
-      </a>
+      <Button
+        color="primary"
+        :href="user.html_url"
+        size="xs"
+        target="_blank"
+      >
+        Perfil no Github
+        <ExternalLinkIcon class="ml-1 translate-y-[-1px]" size="14" />
+      </Button>
     </div>
   </article>
 </template>
