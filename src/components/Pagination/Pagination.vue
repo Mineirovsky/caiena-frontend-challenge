@@ -36,8 +36,8 @@ function onPageClick (page: number) {
 
 <template>
   <nav>
-    <ul class="flex flex-row justify-center">
-      <li key="first" class="mx-1">
+    <ul class="flex flex-row justify-center flex-wrap">
+      <li key="first" class="mx-1 my-1">
         <Button
           @click="() => onPageClick(1)"
           :disabled="modelValue <= 1"
@@ -46,7 +46,7 @@ function onPageClick (page: number) {
           <span class="sr-only">Primeira página</span>
         </Button>
       </li>
-      <li key="prev" class="mx-1">
+      <li key="prev" class="mx-1 my-1">
         <Button
           @click="() => onPageClick(modelValue - 1)"
           :disabled="modelValue <= 1"
@@ -58,13 +58,13 @@ function onPageClick (page: number) {
       <li
         v-for="page in pagesBefore"
         :key="page"
-        class="mx-1"
+        class="mx-1 my-1"
       >
         <Button @click="() => onPageClick(page)">
           {{ page }}
         </Button>
       </li>
-      <li class="mx-1">
+      <li :key="modelValue" class="mx-1 my-1">
         <Button
           aria-current="page"
           color="primary"
@@ -77,13 +77,13 @@ function onPageClick (page: number) {
       <li
         v-for="page in pagesAfter"
         :key="page"
-        class="mx-1"
+        class="mx-1 my-1"
       >
         <Button @click="() => onPageClick(page)">
           {{ page }}
         </Button>
       </li>
-      <li key="next" class="mx-1">
+      <li key="next" class="mx-1 my-1">
         <Button
           @click="() => onPageClick(modelValue + 1)"
           :disabled="modelValue >= pageCount"
@@ -92,7 +92,7 @@ function onPageClick (page: number) {
           <span class="sr-only">Próxima página</span>
         </Button>
       </li>
-      <li key="last" class="mx-1">
+      <li key="last" class="mx-1 my-1">
         <Button
           @click="() => onPageClick(pageCount)"
           :disabled="modelValue >= pageCount"

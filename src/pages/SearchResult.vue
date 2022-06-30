@@ -51,7 +51,7 @@ onMounted(() => updateResults())
     <h2 class="text-xl">Resultados para "{{ $route.query.q }}"</h2>
     <Pagination
       v-model="currentPage"
-      class="my-2 max-w-full overflow-x-auto"
+      class="max-w-full"
       :page-count="pageCount"
     />
     <ul v-if="result !== null" class="flex flex-col items-center">
@@ -65,7 +65,7 @@ onMounted(() => updateResults())
     </ul>
     <Pagination
       v-model="currentPage"
-      class="my-2 max-w-full overflow-x-auto"
+      class="max-w-full"
       :page-count="pageCount"
     />
   </main>
