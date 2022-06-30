@@ -47,21 +47,25 @@ onMounted(() => updateResults())
 </script>
 
 <template>
-  <main class="p-2">
+  <main class="container mx-auto p-2">
     <h2 class="text-xl">Resultados para "{{ $route.query.q }}"</h2>
     <Pagination
       v-model="currentPage"
-      class="my-2"
+      class="my-2 max-w-full overflow-x-auto"
       :page-count="pageCount"
     />
     <ul v-if="result !== null" class="flex flex-col items-center">
-      <li v-for="item in result.items" :key="item.id" class="my-2 w-1/2">
+      <li
+        v-for="item in result.items"
+        :key="item.id"
+        class="my-2 w-full sm:w-2/3 md:w-1/2 xl:w-1/3"
+      >
         <SearchResultItem :user="item" />
       </li>
     </ul>
     <Pagination
       v-model="currentPage"
-      class="my-2"
+      class="my-2 max-w-full overflow-x-auto"
       :page-count="pageCount"
     />
   </main>
