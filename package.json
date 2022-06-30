@@ -9,11 +9,13 @@
     "test": "vitest"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "vue": "^3.2.25",
     "vue-router": "4",
     "vue-tabler-icons": "^2.6.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.182",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
     "@vitejs/plugin-vue": "^2.3.3",
