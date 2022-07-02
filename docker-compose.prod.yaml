@@ -1,0 +1,20 @@
+version: '3'
+services:
+  frontend-app:
+    container_name: caiena-frontend-challenge-nginx
+    working_dir: /app
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.caiena-frontend-challenge-nginx.rule=Host(`caiena-challenge.mineiro.info`)"
+      - "traefik.http.routers.caiena-frontend-challenge-nginx.entrypoints=websecure"
+      - "traefik.http.routers.caiena-frontend-challenge-nginx.tls.certResolver=mineiro-resolver"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
