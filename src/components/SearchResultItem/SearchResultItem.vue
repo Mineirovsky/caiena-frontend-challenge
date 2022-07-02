@@ -23,7 +23,7 @@ defineEmits(['readMore'])
           {{ user.login }}
         </a>
       </h3>
-      <Button size="xs" name="readMore" @click="$emit('readMore', user)" class="mr-2">Ver mais</Button>
+      <!-- <Button size="xs" name="readMore" @click="$emit('readMore', user)" class="mr-2">Ver mais</Button> -->
       <Button
         color="primary"
         :href="user.html_url"
